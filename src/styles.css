@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+
+/**
+ * Layout
+ */
+
+/* we want a full page on the home component
+ * and a aside/main division on the dashboard component
+ */
+app-root {
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: max-content max-content auto max-content;
+  grid-template-areas:
+    "header"
+    "navbar"
+    "content"
+    "footer";
+  /* // define mobile layout first, then add media queries for the rest
+  // https://gridbyexample.com/examples/example13/ */
+}
+
+app-header {
+  grid-area: header;
+}
+
+app-navbar {
+  grid-area: navbar;
+}
+
+app-sidebar {
+  grid-area: sidebar;
+}
+
+router-outlet {
+  /* // Fix router outlet from influencing the grid */
+  display: none;
+}
+
+/* // Attempt at setting an attribute for the injected component */
+[content] {
+  grid-area: content;
+  background: greenyellow;
+}
+
+/* // Attempt at selecting the injected component (the subsequent sibling of the router) */
+router-outlet + * {
+  grid-area: content;
+  background: greenyellow; /* DEBUG: CSS is applied as expected if the background changes */
+}
+
+/* // Attempt at selecting a dynamically injected component */
+app-dashboard {
+  background: red; /* DEBUG: CSS is applied as expected if the background changes */
+}
+
+app-footer {
+  grid-area: footer;
+}
