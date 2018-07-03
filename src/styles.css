@@ -17,7 +17,7 @@ app-root {
   grid-template-areas:
     "header"
     "navbar"
-    "content"
+    "sidebar" "content"
     "footer";
   /* // define mobile layout first, then add media queries for the rest
   // https://gridbyexample.com/examples/example13/ */

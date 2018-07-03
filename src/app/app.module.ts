@@ -8,6 +8,7 @@ import { HomeComponent } from "./components/home/home.component";
 import { HeaderComponent } from "./app-shell/header/header.component";
 import { FooterComponent } from "./app-shell/footer/footer.component";
 import { NavbarComponent } from "./app-shell/navbar/navbar.component";
+import { SidebarComponent } from './app-shell/sidebar/sidebar.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -21,7 +22,8 @@ const routes: Routes = [
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
